@@ -23,8 +23,8 @@ Route::get('adicionar-aluno', function () {
 });
 
 Route::prefix('/aluno')->group(function () {
-    Route::post('/adicionar', function(){});
-    Route::post('/remover', function(){});
-    Route::post('/atualizar', function(){});
+    Route::post('/adicionar', [App\Http\Controller\AlunoController::class, 'adicionar']);
+    Route::post('/remover', [App\Http\Controller\AlunoController::class, 'remover']);
+    Route::post('/atualizar', [App\Http\Controller\AlunoController::class, 'editar']);
     Route::post('/listar', [App\Http\Controller\AlunoController::class, 'listar']);
 });
