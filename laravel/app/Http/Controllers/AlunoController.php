@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\AlunoModel;
+use App\Models\AlunoModel as Aluno;
 
 class AlunoController extends Controller
 {
@@ -16,7 +16,7 @@ class AlunoController extends Controller
     }
 
     function listar() {
-        $alunos =  Alunos::all();
+        $alunos =  Aluno::all();
 
         return response() -> json($alunos);
     }
