@@ -23,9 +23,8 @@ Route::get('adicionar-aluno', function () {
 });
 
 Route::prefix('/aluno')->group(function () {
-    Route::get('/index', function(){});
-    Route::get('/adicionar', function(){});
-    Route::get('/remover', function(){});
-    Route::get('/atualizar', function(){});
-    Route::get('/listar', function(){});
+    Route::post('/adicionar', function(){});
+    Route::post('/remover', function(){});
+    Route::post('/atualizar', function(){});
+    Route::post('/listar', [App\Http\Controller\AlunoController::class, 'listar']);
 });
